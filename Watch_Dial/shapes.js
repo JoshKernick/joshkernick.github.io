@@ -95,7 +95,8 @@ class Numeral {
             numberals[4] = "IIII";
         }
 
-        this.number = numberals[(info.i || 0) % 12];
+        let degree_to_number = Math.round((degrees(info.angle) / 30)) % 12;
+        this.number = numberals[degree_to_number];
         this.size = info.shape_info.size || 20;
     }
 

@@ -11,8 +11,8 @@ class Dial {
         this.addMarker({ shape_info: { shape: "Rectangle", width: 1, height: 10 }, positions: "300-5", radius: 395 });
         this.addMarker({ shape_info: { shape: "Rectangle", width: 3, height: 10 }, positions: "60-5", radius: 395 });
         this.addMarker({ shape_info: { shape: "Rectangle", width: 5, height: 10 }, positions: "12", radius: 395 });
-        
-        this.addMarker({ shape_info: { shape: "Rectangle", width: 20, height: 20 }, positions: "4", radius: 380, colour: red });
+
+        this.addMarker({ shape_info: { shape: "Rectangle", width: 20, height: 20 }, positions: "4", radius: 380});
 
         this.addMarker({ shape_info: { shape: "Circle", radius: 390}});
 
@@ -21,16 +21,16 @@ class Dial {
 
         this.addMarker({ shape_info: { shape: "Circle", radius: 370}});
 
-        this.addMarker({ shape_info: { shape: "Numeral", size: 75, traditional: true}, positions: "12--9", radius: 310 });
+        this.addMarker({ shape_info: { shape: "Numeral", size: 75}, positions: "12--9", radius: 310 });
 
-        this.addMarker({ shape_info: { shape: "Dot", radius: 20}, colour: [0, 0, 0, 100]});
+        this.addMarker({ shape_info: { shape: "Dot", radius: 20}, colour: [255, 255, 255, 100]});
 
         // Small seconds        
         this.addMarker({ shape_info: { shape: "Circle", radius: 84}, x: DIAL_X - 225});
         this.addMarker({ shape_info: { shape: "Rectangle", width: 2, height: 4}, positions: "12", x: DIAL_X - 225, radius: 82 });
         this.addMarker({ shape_info: { shape: "Rectangle", width: 1, height: 4}, positions: "60-5", x: DIAL_X - 225, radius: 82 });
         this.addMarker({ shape_info: { shape: "Circle", radius: 80}, x: DIAL_X - 225});
-        this.addMarker({ shape_info: { shape: "Dot", radius: 5}, x: DIAL_X - 225, colour: [0, 0, 0, 100]});
+        this.addMarker({ shape_info: { shape: "Dot", radius: 5}, x: DIAL_X - 225, colour: [255, 255, 255, 100]});
     }
 
     addMarker(options) {
