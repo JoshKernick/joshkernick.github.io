@@ -8,7 +8,7 @@ class Markers {
         this.skipEvery = options.skipEvery;
         this.skipIndex = options.skipIndex ?? -1;
 
-        this.shape_info = options.shape_info || { shape: "Dot", diameter: 5 };
+        this.marker = options.marker || { shape: "Dot", diameter: 5 };
 
         this.setMarkers();
     }
@@ -19,14 +19,17 @@ class Markers {
 
         for (let i = 0; i < this.markerCount; i++) {
             if (!(i % this.skipEvery == 0) && !(i == this.skipIndex)) {
-                this.markers.push(new shapes[this.shape_info.shape]({
-                    x: this.x + (this.diameter / 2) * Math.cos(radians(i * angleStep - 90)),
-                    y: this.y + (this.diameter / 2) * Math.sin(radians(i * angleStep - 90)),
-                    angle: radians(i * angleStep),
-                    colour: this.colour,
-                    i: i,
-                    shape_info: this.shape_info
-                }));
+                this.markers.push(
+                    new shapes[this.marker.shape]
+                        ({
+                            x: this.x + (this.diameter / 2) * Math.cos(radians(i * angleStep - 90)),
+                            y: this.y + (this.diameter / 2) * Math.sin(radians(i * angleStep - 90)),
+                            angle: radians(i * angleStep),
+                            colour: this.colour,
+                            i: i
+                        },
+                            this.marker
+                        ));
             }
         }
     }

@@ -1,12 +1,12 @@
 class Circle {
-    constructor(info) {
+    constructor(info, marker) {
         this.x = info.x;
         this.y = info.y;
         this.colour = info.colour;
         this.angle = info.angle;
 
-        this.diameter = toPixels(info.shape_info.diameter);
-        this.thickness = info.shape_info.thickness || 1;
+        this.diameter = toPixels(marker.diameter);
+        this.thickness = marker.thickness || 1;
     }
 
     display() {
@@ -20,13 +20,13 @@ class Circle {
 }
 
 class Dot {
-    constructor(info) {
+    constructor(info, marker) {
         this.x = info.x;
         this.y = info.y;
         this.colour = info.colour;
         this.angle = info.angle;
 
-        this.diameter = toPixels(info.shape_info.diameter || 1);
+        this.diameter = toPixels(marker.diameter || 1);
     }
 
     display() {
@@ -38,14 +38,14 @@ class Dot {
 }
 
 class Rectangle {
-    constructor(info) {
+    constructor(info, marker) {
         this.x = info.x;
         this.y = info.y;
         this.colour = info.colour;
         this.angle = info.angle;
 
-        this.width = toPixels(info.shape_info.width || 1);
-        this.height = toPixels(info.shape_info.height || 1);
+        this.width = toPixels(marker.width || 1);
+        this.height = toPixels(marker.height || 1);
     }
 
     display() {
@@ -60,14 +60,14 @@ class Rectangle {
 }
 
 class Triangle {
-    constructor(info) {
+    constructor(info, marker) {
         this.x = info.x;
         this.y = info.y;
         this.colour = info.colour;
         this.angle = info.angle;
 
-        this.width = toPixels(info.shape_info.width || 5);
-        this.height = toPixels(info.shape_info.height || 5);
+        this.width = toPixels(marker.width || 5);
+        this.height = toPixels(marker.height || 5);
     }
 
     display() {
@@ -81,16 +81,16 @@ class Triangle {
 }
 
 class Number {
-    constructor(info) {
-        this.x = info.x;
-        this.y = info.y;
+    constructor(info, marker) {
+        this.x = info.x + toPixels(marker.offsetX || 0);
+        this.y = info.y + toPixels(marker.offsetY || 0);
         this.colour = info.colour;
-        this.angle = info.shape_info.rotation ? info.angle : 0;
+        this.angle = marker.rotation ? info.angle : 0;
 
         let degree_to_number = Math.round((degrees(info.angle) / 30)) % 12;
 
         this.number = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11][degree_to_number];
-        this.size = toPixels(info.shape_info.size || 2);
+        this.size = toPixels(marker.size || 2);
     }
 
     display() {
@@ -106,18 +106,18 @@ class Number {
 }
 
 class Numeral {
-    constructor(info) {
-        this.x = info.x;
-        this.y = info.y;
+    constructor(info, marker) {
+        this.x = info.x + toPixels(marker.offsetX || 0);
+        this.y = info.y + toPixels(marker.offsetY || 0);
         this.colour = info.colour;
-        this.angle = info.shape_info.rotation ? info.angle : 0;
+        this.angle = marker.rotation ? info.angle : 0;
 
         let numberals = ["XII", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"];
-        if (info.shape_info.traditional) { numberals[4] = "IIII"; }
+        if (marker.traditional) { numberals[4] = "IIII"; }
         let degree_to_number = Math.round((degrees(info.angle) / 30)) % 12;
 
         this.number = numberals[degree_to_number];
-        this.size = toPixels(info.shape_info.size || 2);
+        this.size = toPixels(marker.size || 2);
     }
 
     display() {
@@ -134,14 +134,14 @@ class Numeral {
 }
 
 class Text {
-    constructor(info) {
+    constructor(info, marker) {
         this.x = info.x;
         this.y = info.y;
         this.colour = info.colour;
         this.angle = info.angle;
 
-        this.text = info.shape_info.text || "TEXT";
-        this.size = toPixels(info.shape_info.size || 2);
+        this.text = marker.text || "TEXT";
+        this.size = toPixels(marker.size || 2);
     }
 
     display() {
