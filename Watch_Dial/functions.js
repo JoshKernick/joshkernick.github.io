@@ -47,3 +47,9 @@ function mouseReleased() {
 function mouseWheel() {
     // console.log(event.delta)
 }
+
+// ---
+
+function toPixels(mm) {
+    return mm * SCALE;
+}

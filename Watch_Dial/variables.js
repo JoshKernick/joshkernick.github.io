@@ -26,9 +26,10 @@ let shapes;
 
 const DIAL_X = 400;
 const DIAL_Y = 400;
-const DIAL_DIAMETER = 800;  // 1px = 0.05mm, 1mm = 20px, 40mm = 800px
+const DIAL_DIAMETER = 40;  // 40mm = 800px, 1mm = 20px, 1px = 0.05mm
+const SCALE = 20;
 
-let ticks_per_second = 1;
+let ticks_per_second = 5;
 
 // ---
 
@@ -49,6 +50,6 @@ let yellow = [235, 192, 52];
 
 let colors = [red, green, blue, light_blue, orange, yellow];
 
-let dial_colour = white;
-let hand_colour = black;
-let marker_colour = black;
+let dial_colour = black;
+let hand_colour = white;
+let marker_colour = white;

@@ -1,0 +1,64 @@
+let markers = [
+            {
+                shape_info: { shape: "Circle", radius: 400, thickness: 2 }
+            },
+            {
+                shape_info: { shape: "Rectangle", width: 1, height: 10 },
+                markerCount: 300, skipEvery: 5, radius: 395
+            },
+            {
+                shape_info: { shape: "Rectangle", width: 3, height: 10 },
+                markerCount: 60, skipEvery: 5, radius: 395
+            },
+            {
+                shape_info: { shape: "Rectangle", width: 5, height: 10 },
+                markerCount: 12, radius: 395
+            },
+            {
+                shape_info: { shape: "Rectangle", width: 20, height: 20 },
+                markerCount: 4, radius: 380
+            },
+            {
+                shape_info: { shape: "Circle", radius: 390 }
+            },
+            {
+                shape_info: { shape: "Rectangle", width: 10, height: 20 },
+                markerCount: 12, skipEvery: 3, radius: 380
+            },
+            {
+                shape_info: { shape: "Dot", radius: 3 },
+                markerCount: 60, skipEvery: 5, radius: 380
+            },
+            {
+                shape_info: { shape: "Circle", radius: 370 }
+            },
+            {
+                shape_info: { shape: "Numeral", size: 75 },
+                markerCount: 12, skipIndex: 9, radius: 310
+            },
+            {
+                shape_info: { shape: "Dot", radius: 20 },
+                colour: [255, 255, 255, 100]
+            },
+            // Small seconds
+            {
+                shape_info: { shape: "Circle", radius: 84 },
+                x: DIAL_X - 225
+            },
+            {
+                shape_info: { shape: "Rectangle", width: 2, height: 4 },
+                markerCount: 12, x: DIAL_X - 225, radius: 82
+            },
+            {
+                shape_info: { shape: "Rectangle", width: 1, height: 4 },
+                markerCount: 60, skipEvery: 5, x: DIAL_X - 225, radius: 82
+            },
+            {
+                shape_info: { shape: "Circle", radius: 80 },
+                x: DIAL_X - 225
+            },
+            {
+                shape_info: { shape: "Dot", radius: 5 },
+                x: DIAL_X - 225, colour: [255, 255, 255, 100]
+            }
+        ];

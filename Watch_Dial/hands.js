@@ -2,15 +2,17 @@ class Hand {
     constructor(options = {}) {
         this.x = options.x || DIAL_X;
         this.y = options.y || DIAL_Y;
-        this.length = options.length || DIAL_DIAMETER / 2;
-        this.width = options.width || 10;
+        this.length = toPixels(options.length);
+        this.width = toPixels(options.width || 1);
+        this.hole = toPixels(options.hole || 1);
         this.shape = Shapes[options.shape || "Line"];
+        this.colour = options.colour || hand_colour;
     }
 
     display(angle) {
         push();
-        fill(hand_colour);
-        ellipse(this.x, this.y, this.width * 2);
+        fill(this.colour);
+        ellipse(this.x, this.y, this.hole);
 
         translate(this.x, this.y);
         rotate(angle);

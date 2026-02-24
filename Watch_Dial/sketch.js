@@ -42,6 +42,10 @@ function draw() {
 
 	dial.display();
 
+	text(DIAL_DIAMETER + "mm Dial", 10, 15);
+	text("x " + (mouseX - DIAL_X) / SCALE, 10, 30);
+	text("y " + (mouseY - DIAL_Y) / SCALE, 10, 45);
+
 	if (lmb) {
 		if (shift) {
 			// brush
