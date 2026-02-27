@@ -26,10 +26,13 @@ let shapes;
 
 const DIAL_X = 400;
 const DIAL_Y = 400;
-const DIAL_DIAMETER = 40;  // 40mm = 800px, 1mm = 20px, 1px = 0.05mm
+const DIAL_DIAMETER = 38;  // 40mm = 800px, 1mm = 20px, 1px = 0.05mm
 const SCALE = 20;
 
 let ticks_per_second = 5;
+
+let fonts = ["Times New Roman", "Georgia", "Helvetica", "Trebuchet MS", "Verdana"];
+let default_font = 'Times New Roman';
 
 // ---
 
@@ -48,8 +51,9 @@ let light_blue = [56, 189, 248];
 let orange = [251, 136, 50];
 let yellow = [235, 192, 52];
 
+let brass = [181, 166, 66];
+
 let colors = [red, green, blue, light_blue, orange, yellow];
 
-let dial_colour = black;
-let hand_colour = white;
-let marker_colour = white;
+let dial_colour = white;
+let marker_colour = black;

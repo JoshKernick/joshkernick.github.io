@@ -6,7 +6,7 @@ class Hand {
         this.width = toPixels(options.width || 1);
         this.hole = toPixels(options.hole || 1);
         this.shape = Shapes[options.shape || "Line"];
-        this.colour = options.colour || hand_colour;
+        this.colour = options.colour || marker_colour;
     }
 
     display(angle) {

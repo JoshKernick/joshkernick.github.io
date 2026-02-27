@@ -38,10 +38,12 @@ function draw() {
 		sims_per_second = 0;
 	}
 
-	background(grey);
+	// background(grey);
+	background(white);
 
 	dial.display();
 
+	fill(black)
 	text(DIAL_DIAMETER + "mm Dial", 10, 15);
 	text("x " + (mouseX - DIAL_X) / SCALE, 10, 30);
 	text("y " + (mouseY - DIAL_Y) / SCALE, 10, 45);

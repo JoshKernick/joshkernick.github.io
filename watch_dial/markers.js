@@ -6,7 +6,7 @@ class Markers {
         this.colour = options.colour || marker_colour;
         this.markerCount = options.markerCount || 1;
         this.skipEvery = options.skipEvery;
-        this.skipIndex = options.skipIndex ?? -1;
+        this.skip = options.skip;
 
         this.marker = options.marker || { shape: "Dot", diameter: 5 };
 
@@ -18,7 +18,7 @@ class Markers {
         const angleStep = 360 / this.markerCount;
 
         for (let i = 0; i < this.markerCount; i++) {
-            if (!(i % this.skipEvery == 0) && !(i == this.skipIndex)) {
+            if (!(i % this.skipEvery === 0) && !(i === this.skip)) {
                 this.markers.push(
                     new shapes[this.marker.shape]
                         ({

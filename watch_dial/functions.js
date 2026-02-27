@@ -6,6 +6,9 @@ function keyPressed() {
         step = true;
         paused = true;
     }
+    if (key == "c") {
+        dial.consoleLogMarkers();
+    }
     if (key == "Shift") {
         shift = true;
     }
@@ -52,4 +55,8 @@ function mouseWheel() {
 
 function toPixels(mm) {
     return mm * SCALE;
+}
+
+function toMM(pixels) {
+    return pixels / SCALE;
 }
